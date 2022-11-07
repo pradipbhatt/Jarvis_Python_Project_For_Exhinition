@@ -2,7 +2,8 @@ import pyttsx3
 import datetime
 import speech_recognition as sr
 import wikipedia
-
+import webbrowser
+import os
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')  # getting details of current voice
 engine.setProperty('voice', voices[1].id)
@@ -50,8 +51,8 @@ def get_command():
         return query
 
 if __name__=="__main__" :
+    speak("Hello, pradip it's me jarvis ask me anything Accoroding to wikipidia,for open google, for open youtube,for play music,my other functions are coming soon")
     wishme()
-    speak("Hello, pradip it's me jarvis ask me anything Accoroding to wikipidia")
     while True:
     # if 1:
         query = get_command().lower() #Converting user query into lower case
@@ -64,4 +65,24 @@ if __name__=="__main__" :
             speak("According to Wikipedia")
             print(results)
             speak(results)
+        
+        elif 'open youtube' in query:
+            webbrowser.open("youtube.com")
             
+        elif 'open google' in query:
+            webbrowser.open("google.com") 
+            
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")    
+            speak(f"Sir, the time is {strTime}")
+            
+        elif 'open code' in query:
+            codePath = "F:\\Python\\Jarvis"
+            os.startfile(codePath)
+            
+        elif 'play music' in query:
+            music_dir = 'F:\\music'
+            songs = os.listdir(music_dir)
+            print(songs)    
+            os.startfile(os.path.join(music_dir, songs[6]))    
+         

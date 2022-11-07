@@ -1,4 +1,4 @@
-
+#This program is for text to voice command using Python.
 import pyttsx3
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')

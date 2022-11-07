@@ -51,7 +51,7 @@ def get_command():
         return query
 
 if __name__=="__main__" :
-    speak("Hello, pradip it's me jarvis ask me anything Accoroding to wikipidia,for open google, for open youtube,for play music,my other functions are coming soon")
+    speak("Hello, it's me saangam AI model ,ask me anything Accoroding to wikipidia,for open google, for open youtube,for play music,my other functions are coming soon")
     wishme()
     while True:
     # if 1:
@@ -84,5 +84,5 @@ if __name__=="__main__" :
             music_dir = 'F:\\music'
             songs = os.listdir(music_dir)
             print(songs)    
-            os.startfile(os.path.join(music_dir, songs[6]))    
+            os.startfile(os.path.join(music_dir, songs[30]))    
          
